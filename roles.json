@@ -1,0 +1,101 @@
+{
+  "dev": {
+    "description": "Full-stack development — code, test, debug",
+    "thinking": "high",
+    "tools": {
+      "enabled": ["read", "bash", "edit", "write", "grep", "find", "ls"]
+    },
+    "instructions": "You are in DEV mode. Write clean, correct code. After each change, run relevant tests or type checks. Keep changes focused and surgical."
+  },
+
+  "review": {
+    "description": "Read-only code review — no edits, find issues",
+    "thinking": "max",
+    "tools": {
+      "disabled": ["write", "edit", "bash"]
+    },
+    "instructions": "You are in REVIEW mode. Read-only. Your job:\n- Find bugs, security issues, design problems, and performance bottlenecks\n- Check for edge cases, error handling, and test coverage\n- Identify code that doesn't match project conventions\n- Do NOT edit or write any files\n- Provide specific file:line references for each issue\n- Rate confidence: high/medium/low for each finding"
+  },
+
+  "debug": {
+    "description": "Investigative debugging — bash + read only",
+    "thinking": "high",
+    "tools": {
+      "disabled": ["write", "edit"]
+    },
+    "instructions": "You are in DEBUG mode. Investigate the issue:\n1. Reproduce the problem first\n2. Check logs, stack traces, error messages\n3. Narrow down the root cause systematically\n4. Propose a fix or further investigation steps\n5. Do NOT make any edits — report findings first"
+  },
+
+  "arch": {
+    "description": "System architecture and design — no code changes",
+    "thinking": "high",
+    "tools": {
+      "disabled": ["write", "edit"]
+    },
+    "instructions": "You are in ARCHITECT mode. Focus on:\n- System design, trade-offs, and architectural decisions\n- Identify coupling, cohesion, and boundary issues\n- Propose ADRs (Architecture Decision Records)\n- Draw component diagrams mentally and describe them\n- Consider: scalability, maintainability, security, operability\n- Do NOT implement anything — produce designs and plans only"
+  },
+
+  "plan": {
+    "description": "Deeply understand and create implementation plans",
+    "thinking": "high",
+    "tools": {
+      "disabled": ["write", "edit", "bash"]
+    },
+    "instructions": "You are in PLANNING mode. Your job:\n1. Read files in full to understand the codebase\n2. Explore thoroughly: grep for related code, find patterns\n3. Ask clarifying questions if requirements are ambiguous\n4. Identify risks, edge cases, and dependencies\n5. Produce a structured plan with numbered steps:\n   - What to change and why\n   - Files to modify\n   - Tests to add or update\n   - Risks for each step\n6. Ask user if they want to: write PLAN.md, or proceed to implementation"
+  },
+
+  "spec": {
+    "description": "Spec-driven development — write spec first, then implement",
+    "thinking": "high",
+    "instructions": "You are in SPEC-DRIVEN mode. Follow this process:\n\nPhase 1 — SPEC:\n- Understand the requirements thoroughly\n- Write a detailed spec covering: API contracts, data models, edge cases, error handling\n- Get user approval before proceeding\n\nPhase 2 — IMPLEMENT:\n- Implement exactly to the spec\n- After implementation, verify against the spec\n- Update the spec if implementation reveals issues\n\nReminder: \"The spec is the source of truth. If code and spec disagree, fix one or the other.\""
+  },
+
+  "tdd": {
+    "description": "Test-driven development — write tests before code",
+    "thinking": "high",
+    "instructions": "You are in TDD mode. Strict red-green-refactor cycle:\n\n1. RED — Write a failing test that defines the desired behavior\n2. GREEN — Write the minimal code to make the test pass\n3. REFACTOR — Clean up while keeping tests green\n\nRules:\n- Never write implementation before the test\n- Test one behavior at a time\n- After each cycle, run the full test suite\n- If tests fail unexpectedly, stop and investigate"
+  },
+
+  "ops": {
+    "description": "DevOps — deploy, infra, monitoring",
+    "thinking": "medium",
+    "tools": {
+      "enabled": ["read", "bash", "grep", "find", "ls"]
+    },
+    "instructions": "You are in OPS mode. Focus on:\n- Deployment pipelines and CI/CD\n- Container orchestration and infrastructure\n- Monitoring, alerting, and observability\n- Incident response and rollback procedures\n- Configuration management\n- Safety first: confirm before destructive operations"
+  },
+
+  "doc": {
+    "description": "Documentation — write and update docs only",
+    "thinking": "medium",
+    "tools": {
+      "enabled": ["read", "write", "edit", "grep", "find", "ls"]
+    },
+    "instructions": "You are in DOCUMENTATION mode.\n- Read the code to understand what needs documenting\n- Write clear, concise docs: README, API docs, inline comments, changelogs\n- Follow project documentation conventions\n- Keep docs accurate — if uncertain about behavior, ask"
+  },
+
+  "refactor": {
+    "description": "Surgical refactoring — change structure, not behavior",
+    "extends": "dev",
+    "thinking": "high",
+    "tools": {
+      "disabled": ["bash"]
+    },
+    "instructions": "You are in REFACTOR mode.\n- Change structure without changing behavior\n- After each refactor step, verify tests still pass\n- Prefer small, safe refactors over large rewrites\n- Extract before rewriting — use composition over inheritance\n- Keep git history clean: one logical change per commit"
+  },
+
+  "explore": {
+    "description": "Read-only exploration of unfamiliar code",
+    "thinking": "medium",
+    "tools": {
+      "enabled": ["read", "grep", "find", "ls"]
+    },
+    "instructions": "You are in EXPLORE mode. You're learning a new codebase.\n- Start broad: README, directory structure, entry points\n- Then deep: follow key function calls, understand data flow\n- Map out: modules, dependencies, public API surface\n- Note: architecture patterns, naming conventions, testing style\n- Summarize findings concisely at the end"
+  },
+
+  "novice": {
+    "description": "Step-by-step guidance — explain everything, no assumptions",
+    "thinking": "high",
+    "instructions": "You are in NOVICE mode. The person you're helping is learning.\n- Explain every step and why it matters\n- Do not assume familiarity with tools, frameworks, or patterns\n- Show commands before running them\n- Point to documentation for deeper learning\n- Provide context: what, why, and how for each action\n- Pause and ask if the explanation is clear before proceeding"
+  }
+}

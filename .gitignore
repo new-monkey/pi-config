@@ -1,0 +1,9 @@
+# Auth & local state
+auth.json
+sessions/
+evolve/
+npm/
+
+# OS files
+.DS_Store
+Thumbs.db

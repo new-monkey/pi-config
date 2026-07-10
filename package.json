@@ -1,0 +1,12 @@
+{
+  "name": "pi-config",
+  "version": "1.0.0",
+  "description": "My Pi coding agent config — roles, evolution, and extensions",
+  "keywords": ["pi-package"],
+  "pi": {
+    "extensions": ["./extensions"],
+    "skills": ["./skills"],
+    "prompts": ["./prompts"],
+    "themes": ["./themes"]
+  }
+}
